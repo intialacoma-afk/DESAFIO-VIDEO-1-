@@ -87,7 +87,7 @@ section#galeria figure {
     box-sizing: border-box;  
     text-align: center;
 }
-/* Estilos para la sección multimedia con iframe (Sin clases) */
+/* Estilos para la sección multimedia sin usar clases */
 section#multimedia {
     margin-bottom: 35px;
 }
@@ -101,18 +101,43 @@ section#multimedia figure {
     box-sizing: border-box;
 }
 
-section#multimedia iframe {
-    width: 100%;           /* Ocupa el ancho disponible */
-    max-width: 100%;       /* Restricción obligatoria de fluidez */
-    height: 315px;
-    display: block;
+/* Estilos para la sección multimedia sin usar clases */
+section#multimedia {
+    margin-bottom: 35px;
+}
+
+section#multimedia figure {
+    text-align: center;
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    padding: 15px;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* Contenedor fluido con porcentajes y max-width para el iframe */
+section#multimedia figure div {
+    width: 100%;
+    max-width: 100%;
+    position: relative;
+    padding-bottom: 56.25%; /* Mantiene la proporción 16:9 perfecta y fluida */
+    height: 0;
     margin: 0 auto;
+}
+
+section#multimedia figure div iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    max-width: 100%; /* Restricción obligatoria de fluidez */
     border: none;
 }
 
 section#multimedia figcaption {
     font-size: 0.9em;
-    margin-top: 10px;
+    margin-top: 15px;
     color: #64748b;
     font-weight: bold;
 }
